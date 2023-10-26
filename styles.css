@@ -1,0 +1,372 @@
+:root {
+   --col-pant1: #2F2E33;
+   --col-pant2: #3A5199;
+   --col-pant3: #D5D6D2;
+   --col-pant4: #FFFFFF;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+   font-size: 100%;
+}
+
+body {
+   background-color: var(--col-pant3);
+   display: flex;
+   flex-direction: column;
+}
+
+.caj_head {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.caj_img {
+   background-color: var(--col-pant2);
+   display: none;
+   flex-direction: row;
+   width: 120px;
+   height: 50px;
+   position: relative;
+   cursor: pointer;
+   z-index: 1;
+}
+
+.imagen {
+   background-color: var(--col-pant1);
+   color: var(--col-pant3);
+   display: flex;
+   max-width: 100%;
+   width: 50px;
+   height: 100%;
+}
+
+.caj_text {
+   display: flex;
+   align-items: center;
+   width: 70px;
+   height: 100%;
+   padding: 0 0 0 10px;
+}
+
+.texto {
+   color: var(--col-pant3);
+   font-family: 'Kanit', sans-serif;
+   font-weight: 400;
+   font-size: 1rem;
+}
+
+.caj_nav {
+   background-color: var(--col-pant1);
+   width: 100%;
+   min-height: 50px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   position: absolute;
+}
+
+.caj_list {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   /* gap: 5px; */
+}
+
+.list {
+   display: flex;
+}
+
+/* .list_x {
+   border-right: 1px solid var(--col-pant4);
+} */
+
+.link {
+   color: var(--col-pant3);
+   display: flex;
+   text-decoration: none;
+   font-family: 'Kanit', sans-serif;
+   font-weight: 400;
+   font-size: 0.8rem;
+   padding: 5px 8px;
+}
+
+.link:hover {
+   color: var(--col-pant4);
+   transition: all 0.3s ease;
+}
+
+.caj_tit {
+   display: flex;
+   justify-content: center;
+   position: relative;
+   width: 100%;
+   margin: 70px 0 0 0;
+
+}
+
+.titulo {
+   color: var(--col-pant1);
+   font-family: 'Kanit', sans-serif;
+   font-weight: 600;
+   font-size: 1.2rem;
+   padding: 5px 10px;
+}
+
+.caj_centro {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding: 0 0 50px 0;
+}
+
+.sec_uno {
+   width: 100%;
+   margin: 15px 0 0 0;
+}
+
+.caj_sub_tit {
+   display: flex;
+   width: 100%;
+   padding: 0 0 0 15px;
+}
+
+.subtitulo {
+   color: var(--col-pant1);
+   font-family: 'Kanit', sans-serif;
+   font-weight: 700;
+   font-size: 1rem;
+   border-top: 1px solid var(--col-pant1);
+   border-bottom: 1px solid var(--col-pant1);
+}
+
+.caj_comest {
+   display: flex;
+   justify-content: flex-start;
+   flex-flow: row wrap;
+   width: 100%;
+   gap: 20px;
+   padding: 10px 10px 10px 10px;
+}
+
+.caj_datos {
+   background-color: var(--col-pant1);
+   display: flex;
+   flex-direction: column;
+   width: 230px;
+   border-radius: 3px;
+   box-shadow: 0 1px 0.4rem var(--col-pant4);
+   padding: 1px;
+}
+
+.img_comest {
+   background-color: red;
+   width: 100%;
+   cursor: pointer;
+   transition: all 0.5s ease;
+   border-radius: 3px;
+}
+
+.img_comest:hover  {
+   transform: scale(0.95);
+}
+
+.img_comest:active {
+   transform: scale(1.1);
+}
+
+.caj_descripc {
+   display: flex;
+   flex-direction: column;
+   padding: 5px 10px 4px 10px;
+}
+
+.parraf_desc {
+   color: var(--col-pant3);
+   font-family: 'Kanit', sans-serif;
+   font-weight: 400;
+   font-size: 1rem;
+}
+
+.lightbox {
+   background-color:rgba(0, 0, 0, 0.4);
+   backdrop-filter: blur(2rem);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   gap: 20px;
+   opacity: 0;
+   pointer-events: none;
+   transition: all 0.5s ease;
+   z-index: 1;
+}
+
+.lightbox.isActive {
+   opacity: 1;
+   pointer-events: auto;
+} 
+
+.cerrar {
+   background-color: aqua;
+   width: 3rem;
+   cursor: pointer;
+   transition: al 0.5s ease;
+}
+
+.cerrar:hover {
+   transform: scale(0.95);   
+}
+
+.cerrar:active {
+   transform: scale(1.1);
+}
+
+.img_cerrar {
+   background-color: violet;
+   color: chartreuse;
+}
+
+.grande {
+   display: flex;
+   max-width: 100%;
+   width: 530px;
+   height: 500px;
+   box-shadow: 0 0 2rem 0 var(--col-pant1) ;
+}
+
+.caj_footer {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   background-color: var(--col-pant2);
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 10px 0 10px 0;
+}
+
+.caj_comp {
+   background-color: var(--col-pant1);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   border-radius: 50px;
+   padding: 3px 3px 3px 3px ;
+}
+
+.link_comp {
+   color: var(--col-pant3);
+   display: flex;
+   font-family: 'Kanit', sans-serif;
+   font-weight: 300;
+   font-size: 0.9rem;
+   text-decoration: none;
+   padding: 0 13px 0 5px;
+}
+
+.link_wsp {
+   max-width: 100%;
+   width: 30px;
+}
+
+
+
+@media (max-width: 800px) {
+   
+   .caj_img {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 50px;
+      z-index: 1;
+   }
+   
+   .caj_text {
+      display: flex;
+      width: 100%;
+   }
+   
+   .caj_nav {
+      height: calc(45px * 12);
+      position: relative;
+      display: none;
+   }
+
+   .caj_nav.activo {
+      display: block;
+   }
+   
+   .caj_list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      transition: all 0.6s ease;
+   }
+   
+   .list {
+      display: flex;
+      width: 100%;
+      height: 45px;
+   }
+   
+   .list:hover {
+      background-color: #151516;
+      transition: all 0.3s ease;
+   }
+   
+   .link {
+      background-color: transparent;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      padding: 0 0 0 10px;
+   }  
+
+   .caj_tit {
+      margin: 30px 0 0 0;
+   }
+   
+   .caj_comest {
+      gap: 17px;
+   }
+   
+   .caj_datos {
+      width: 180px;
+   }
+   
+   .lightbox {
+      gap: 15px;
+   } 
+   
+   .cerrar {
+      width: 2.5rem;
+      padding: 15px 0 0 0;
+   }
+   
+   .grande {
+      width: 500px;
+      height: 440px;
+   }
+   
+   .caj_footer {
+      padding: 10px 0 10px 0;
+   }
+   
+}
+
+
+
