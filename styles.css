@@ -1,8 +1,10 @@
 :root {
-   --col-pant1: #2F2E33;
-   --col-pant2: #3A5199;
-   --col-pant3: #D5D6D2;
-   --col-pant4: #FFFFFF;
+   --col-pant1: #2F496E;
+   --col-pant2: #2988BD;
+   --col-pant3: #F4EADE;
+   --col-pant4: #ED8C72;
+   --text-1: #403e3e;
+
 }
 
 * {
@@ -113,7 +115,7 @@ body {
 }
 
 .titulo {
-   color: var(--col-pant1);
+   color: var(--text-1);
    font-family: 'Kanit', sans-serif;
    font-weight: 600;
    font-size: 1.2rem;
@@ -139,12 +141,12 @@ body {
 }
 
 .subtitulo {
-   color: var(--col-pant1);
+   color: var(--text-1);
    font-family: 'Kanit', sans-serif;
    font-weight: 700;
    font-size: 1rem;
-   border-top: 1px solid var(--col-pant1);
-   border-bottom: 1px solid var(--col-pant1);
+   border-top: 1px solid var(--text-1);
+   border-bottom: 1px solid var(--text-1);
 }
 
 .caj_comest {
@@ -153,25 +155,28 @@ body {
    flex-flow: row wrap;
    width: 100%;
    gap: 20px;
-   padding: 10px 10px 10px 10px;
+   padding: 10px 20px 10px 20px;
 }
 
 .caj_datos {
-   background-color: var(--col-pant1);
+   /* background-color: var(--col-pant1); */
    display: flex;
-   flex-direction: column;
-   width: 230px;
+   flex-direction: row;
+   align-items: center;
+   width: 380px;
    border-radius: 3px;
-   box-shadow: 0 1px 0.4rem var(--col-pant4);
    padding: 1px;
 }
 
 .img_comest {
    background-color: red;
-   width: 100%;
+   max-width: 100%;
+   width: 90px;
+   height: 90px;
    cursor: pointer;
    transition: all 0.5s ease;
    border-radius: 3px;
+   box-shadow: 0 1px 0.5rem var(--text-1);
 }
 
 .img_comest:hover  {
@@ -183,9 +188,16 @@ body {
 }
 
 .caj_descripc {
+   background-color: var(--col-pant4);
+   position: relative;
    display: flex;
    flex-direction: column;
-   padding: 5px 10px 4px 10px;
+   left: -10px;
+   border-radius: 5px;
+   z-index: -1;
+   border: 2px solid var(--col-pant5);
+   box-shadow: 0 1px 0.5rem var(--text-1);
+   padding: 10px 10px 10px 20px;
 }
 
 .parraf_desc {
@@ -193,6 +205,7 @@ body {
    font-family: 'Kanit', sans-serif;
    font-weight: 400;
    font-size: 1rem;
+   line-height: 1.2rem;
 }
 
 .lightbox {
@@ -217,17 +230,18 @@ body {
 .lightbox.isActive {
    opacity: 1;
    pointer-events: auto;
-} 
+}
 
 .cerrar {
-   background-color: aqua;
+   display: flex;
    width: 3rem;
    cursor: pointer;
    transition: al 0.5s ease;
 }
 
 .cerrar:hover {
-   transform: scale(0.95);   
+   transform: scale(0.95);
+   transition: 0.3s ease;
 }
 
 .cerrar:active {
@@ -235,8 +249,8 @@ body {
 }
 
 .img_cerrar {
-   background-color: violet;
-   color: chartreuse;
+   background-color: var(--text-1);
+   color: var(--col-pant3);
 }
 
 .grande {
@@ -244,14 +258,15 @@ body {
    max-width: 100%;
    width: 530px;
    height: 500px;
-   box-shadow: 0 0 2rem 0 var(--col-pant1) ;
+   box-shadow: 0 0 2rem 0 var(--text-1);
+   border-radius: 5px;
 }
 
 .caj_footer {
-   position: fixed;
+   /* position: fixed;
    bottom: 0;
-   left: 0;
-   background-color: var(--col-pant2);
+   left: 0; */
+   background-color: var(--text-1);
    width: 100%;
    display: flex;
    justify-content: center;
@@ -259,7 +274,7 @@ body {
 }
 
 .caj_comp {
-   background-color: var(--col-pant1);
+   background-color: var(--col-pant2);
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -284,8 +299,8 @@ body {
 
 
 
-@media (max-width: 800px) {
-   
+/* @media (max-width: 800px) {
+
    .caj_img {
       display: flex;
       flex-direction: row;
@@ -293,12 +308,12 @@ body {
       height: 50px;
       z-index: 1;
    }
-   
+
    .caj_text {
       display: flex;
       width: 100%;
    }
-   
+
    .caj_nav {
       height: calc(45px * 12);
       position: relative;
@@ -308,25 +323,25 @@ body {
    .caj_nav.activo {
       display: block;
    }
-   
+
    .caj_list {
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
       transition: all 0.6s ease;
    }
-   
+
    .list {
       display: flex;
       width: 100%;
       height: 45px;
    }
-   
+
    .list:hover {
       background-color: #151516;
       transition: all 0.3s ease;
    }
-   
+
    .link {
       background-color: transparent;
       width: 100%;
@@ -334,39 +349,39 @@ body {
       align-items: center;
       font-size: 1rem;
       padding: 0 0 0 10px;
-   }  
+   }
 
    .caj_tit {
       margin: 30px 0 0 0;
    }
-   
+
    .caj_comest {
       gap: 17px;
    }
-   
+
    .caj_datos {
       width: 180px;
    }
-   
+
    .lightbox {
       gap: 15px;
-   } 
-   
+   }
+
    .cerrar {
       width: 2.5rem;
       padding: 15px 0 0 0;
    }
-   
+
    .grande {
       width: 500px;
       height: 440px;
    }
-   
+
    .caj_footer {
       padding: 10px 0 10px 0;
    }
-   
-}
+
+} */
 
 
 
